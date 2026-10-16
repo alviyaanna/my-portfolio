@@ -3,32 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Alviya Anna Sabu, Electronics and Computer Engineering graduate interested in AI, Python, SQL, and technology.">
-  <title>Alviya Anna Sabu | Personal Portfolio</title>
+  <meta name="description" content="Portfolio of Alviya Anna Sabu, Electronics and Computer Engineering graduate.">
+  <title>Alviya Anna Sabu | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f6f8fc;
-      --white: #ffffff;
-      --dark: #172554;
-      --accent: #6558d3;
-      --light: #eeecff;
-      --text: #354158;
-      --muted: #718096;
-      --border: #e2e8f0;
+      --bg: #0b1020;
+      --surface: #121a2e;
+      --surface-light: #1b2640;
+      --text: #f4f6ff;
+      --muted: #a7b1c9;
+      --accent: #73e0c1;
+      --accent2: #91aaff;
+      --border: rgba(255,255,255,.11);
+      --width: 1100px;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(115,224,193,.08), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(145,170,255,.09), transparent 30%),
+        var(--bg);
       color: var(--text);
+      font-family: "DM Sans", sans-serif;
       line-height: 1.7;
     }
 
@@ -37,454 +49,1067 @@
       text-decoration: none;
     }
 
-    .wrap {
-      width: min(1100px, 90%);
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(var(--width), 90%);
       margin: auto;
     }
+
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .section-description {
+      max-width: 720px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    /* Navigation */
 
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(11,16,32,.92);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
 
-    nav {
-      min-height: 72px;
+    .navbar {
+      min-height: 75px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
     }
 
-    .brand {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--dark);
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
     }
 
-    .brand span {
+    .logo span {
       color: var(--accent);
     }
 
-    .navlinks {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 23px;
+      list-style: none;
     }
 
-    .navlinks a {
-      font-size: 0.92rem;
-      font-weight: 600;
+    .nav-links a {
+      color: var(--muted);
+      font-size: .9rem;
+      transition: color .2s;
     }
 
-    .navlinks a:hover,
-    .text-link:hover {
+    .nav-links a:hover {
       color: var(--accent);
     }
 
-    .menu {
+    .menu-btn {
       display: none;
       padding: 8px 12px;
+      color: var(--text);
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      background: white;
+      border-radius: 9px;
+      font: inherit;
       cursor: pointer;
     }
 
+    /* Hero */
+
     .hero {
-      min-height: 590px;
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
+      grid-template-columns: 1.4fr 1fr;
       align-items: center;
       gap: 55px;
-      padding-top: 65px;
-      padding-bottom: 65px;
     }
 
-    .eyebrow,
-    .kicker {
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      margin-bottom: 23px;
+      border: 1px solid rgba(115,224,193,.25);
+      border-radius: 30px;
+      background: rgba(115,224,193,.06);
       color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: .85rem;
     }
 
-    h1 {
-      margin: 20px 0;
-      color: var(--dark);
-      font-size: clamp(2.6rem, 5vw, 4.5rem);
-      line-height: 1.12;
+    h1, h2, h3 {
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 5.7vw, 4.7rem);
+      line-height: 1.1;
       letter-spacing: -2px;
+      margin-bottom: 20px;
     }
 
-    h1 em {
+    .hero h1 span {
       color: var(--accent);
-      font-style: normal;
     }
 
-    .lead {
-      max-width: 620px;
-      font-size: 1.08rem;
+    .hero-subtitle {
+      color: var(--accent2);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 17px;
+    }
+
+    .hero-description {
       color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 600px;
     }
 
-    .actions {
+    .button-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
+      gap: 13px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 20px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: white;
+      padding: 12px 19px;
+      border-radius: 10px;
+      font-size: .92rem;
       font-weight: 700;
-      transition: 0.2s;
+      transition: transform .2s;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    .btn.primary {
-      color: white;
+    .btn-primary {
       background: var(--accent);
-      border-color: var(--accent);
+      color: #071a17;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: var(--surface);
     }
 
     .profile-card {
-      padding: 35px 28px;
+      padding: 30px;
+      background: linear-gradient(145deg, #1b2640, #121a2e);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      background: var(--white);
-      box-shadow: 0 20px 60px rgba(23, 37, 84, 0.08);
+      border-radius: 23px;
     }
 
-    .avatar {
-      width: 100px;
-      height: 100px;
+    .profile-icon {
+      width: 82px;
+      height: 82px;
       display: grid;
       place-items: center;
-      margin-bottom: 22px;
-      border-radius: 24px;
-      background: var(--light);
+      background: rgba(115,224,193,.1);
+      border: 1px solid rgba(115,224,193,.25);
+      border-radius: 22px;
       color: var(--accent);
-      font-size: 2.5rem;
-      font-weight: 800;
-    }
-
-    .card-label {
-      color: var(--muted);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 22px;
     }
 
     .profile-card h2 {
-      margin: 8px 0;
-      color: var(--dark);
-      font-size: 1.7rem;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
     }
 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
+    .profile-card > p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: .92rem;
     }
 
-    .chip {
-      display: inline-block;
-      padding: 5px 11px;
-      border-radius: 20px;
-      background: var(--light);
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    section {
-      padding: 85px 0;
-    }
-
-    section:nth-of-type(even) {
-      background: white;
-    }
-
-    .section-head {
+    .profile-detail {
       display: flex;
       justify-content: space-between;
-      align-items: end;
-      gap: 25px;
-      margin-bottom: 35px;
+      gap: 12px;
+      padding: 11px 0;
+      border-top: 1px solid var(--border);
+      font-size: .88rem;
     }
 
-    .section-head h2,
-    .contact h2 {
-      margin-top: 10px;
-      color: var(--dark);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      line-height: 1.25;
-    }
-
-    .section-head > p {
-      max-width: 430px;
+    .profile-detail span:first-child {
       color: var(--muted);
     }
 
-    .about-grid,
-    .skill-grid,
-    .projects,
-    .education-grid,
-    .language-grid {
-      display: grid;
-      gap: 20px;
+    .profile-detail span:last-child {
+      text-align: right;
     }
+
+    /* About */
 
     .about-grid {
-      grid-template-columns: 1.2fr 0.8fr;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 35px;
+      align-items: start;
     }
 
-    .skill-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .projects {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .education-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .language-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .panel,
-    .skill,
-    .project,
-    .education,
-    .language,
-    .cert {
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--white);
-    }
-
-    .panel h3,
-    .skill h3,
-    .project h3,
-    .education h3,
-    .language h3,
-    .cert h3 {
-      margin-bottom: 10px;
-      color: var(--dark);
-    }
-
-    .panel p,
-    .skill p,
-    .project p,
-    .education p,
-    .language p,
-    .cert p {
+    .about-text p {
       color: var(--muted);
+      margin-bottom: 17px;
     }
 
-    .symbol {
+    .info-card {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .info-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 16px;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      color: var(--muted);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .info-list li::before {
+      content: "✦";
+      color: var(--accent);
+      margin-right: 10px;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(115,224,193,.4);
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
       margin-bottom: 15px;
-      color: var(--accent);
-      font-size: 1.7rem;
     }
 
-    .skill:hover,
-    .project:hover,
-    .education:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      transition: 0.2s;
-    }
-
-    .project-top {
+    .tags {
       display: flex;
-      justify-content: space-between;
-      margin-bottom: 18px;
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
+      flex-wrap: wrap;
+      gap: 9px;
     }
 
-    .text-link {
+    .tag {
       display: inline-block;
-      margin-top: 18px;
+      padding: 7px 10px;
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #e1e8fa;
+      font-size: .82rem;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      background: linear-gradient(145deg, var(--surface), #10182a);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .project-number {
       color: var(--accent);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: .93rem;
+      margin-bottom: 17px;
+    }
+
+    .project-card .tags {
+      margin-top: auto;
+      padding-top: 5px;
+    }
+
+    /* Education */
+
+    .education-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .education-card {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 25px;
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .education-date {
+      color: var(--accent);
+      font-size: .9rem;
       font-weight: 700;
     }
 
-    .date {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .education {
+    .education-card h3 {
+      font-size: 1.15rem;
       margin-bottom: 5px;
     }
 
-    .education p {
-      margin-top: 5px;
+    .institution {
+      color: var(--accent2);
+      margin-bottom: 8px;
     }
 
-    .soft-skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .education-card p {
+      color: var(--muted);
+      font-size: .93rem;
     }
 
-    .soft-skills span {
-      padding: 10px 16px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: white;
-      font-weight: 600;
-    }
+    /* Soft skills and languages */
 
-    .contact {
+    .two-column {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-      padding: 40px;
-      border-radius: 24px;
-      background: var(--dark);
-      color: white;
+      gap: 22px;
     }
 
-    .contact h2 {
-      color: white;
+    .detail-card {
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
     }
 
-    .contact p {
-      margin-top: 15px;
-      color: #cbd5e1;
+    .detail-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 18px;
     }
 
-    .contact-actions {
+    .simple-list {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .simple-list li {
+      padding: 8px 11px;
+      background: var(--surface-light);
+      border-radius: 8px;
+      color: #e1e8fa;
+      font-size: .88rem;
+    }
+
+    /* Contact */
+
+    .contact-panel {
+      padding: 43px 28px;
+      text-align: center;
+      border: 1px solid rgba(115,224,193,.22);
+      border-radius: 23px;
+      background: linear-gradient(140deg, rgba(115,224,193,.07), rgba(145,170,255,.06));
+    }
+
+    .contact-panel > p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 12px;
     }
 
-    .contact-actions .btn {
-      min-width: 220px;
+    .contact-link {
+      display: inline-block;
+      padding: 11px 15px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow-wrap: anywhere;
+      font-size: .9rem;
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
     }
 
     footer {
       padding: 25px 0;
-      background: white;
       border-top: 1px solid var(--border);
-    }
-
-    .foot {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
+      text-align: center;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: .85rem;
     }
 
-    .foot a {
+    footer span {
       color: var(--accent);
-      font-weight: 700;
     }
 
-    @media (max-width: 800px) {
+    /* Mobile layout */
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
       .hero {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        min-height: auto;
       }
 
-      .about-grid,
-      .contact {
-        grid-template-columns: 1fr;
+      .profile-card {
+        max-width: 560px;
       }
 
-      .skill-grid {
+      .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-head > p {
-        margin-top: 15px;
-      }
     }
 
-    @media (max-width: 600px) {
-      .menu {
+    @media (max-width: 650px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .navbar {
+        min-height: 68px;
+      }
+
+      .menu-btn {
         display: block;
       }
 
-      .navlinks {
+      .nav-links {
         display: none;
         position: absolute;
-        top: 72px;
+        top: 68px;
         left: 0;
         right: 0;
         padding: 20px 5%;
-        background: white;
-        border-bottom: 1px solid var(--border);
         flex-direction: column;
         align-items: flex-start;
+        gap: 16px;
+        background: #0e1528;
+        border-bottom: 1px solid var(--border);
       }
 
-      .navlinks.open {
+      .nav-links.open {
         display: flex;
       }
 
-      .skill-grid,
-      .projects,
-      .education-grid,
-      .language-grid {
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .two-column {
         grid-template-columns: 1fr;
       }
 
-      section {
-        padding: 60px 0;
+      .education-card {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
-      .contact {
-        padding: 28px 22px;
+      .profile-card,
+      .skill-card,
+      .project-card,
+      .detail-card {
+        padding: 22px;
       }
 
-      .foot {
-        flex-direction: column;
+      .contact-panel {
+        padding: 32px 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
 
-      h1 {
-        letter-spacing: -1px;
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav class="wrap">
-      <a class="brand" href="#home">ALVIYA<span>.</span></a>
 
-      <button class="menu" id="menuBtn" aria-expanded="false"
-        aria
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="#home" class="logo">Alviya<span>.</span></a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        aria-label="Toggle navigation menu"
+      >
+        Menu ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#strengths">Strengths</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Home -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Aspiring Data Engineer</div>
+
+          <h1>
+            Hi, I'm<br>
+            <span>Alviya Anna Sabu.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Electronics &amp; Computer Engineering Graduate
+          </p>
+
+          <p class="hero-description">
+            Electronics and Computer Engineering graduate with a strong
+            interest in Artificial Intelligence, Python programming,
+            SQL, and technology-driven problem solving. Recognized for
+            analytical thinking, adaptability, and effective
+            collaboration in team environments. Seeking an opportunity
+            to leverage technical knowledge and a growth-oriented
+            mindset to contribute to innovative projects while building
+            a successful career in the technology industry.
+          </p>
+
+          <div class="button-row">
+            <a href="#projects" class="btn btn-primary">
+              View My Projects →
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="profile-icon" aria-hidden="true">AS</div>
+
+          <h2>Alviya Anna Sabu</h2>
+          <p>Electronics &amp; Computer Engineering Graduate</p>
+
+          <div class="profile-detail">
+            <span>Career Interest</span>
+            <span>Data Engineering</span>
+          </div>
+
+          <div class="profile-detail">
+            <span>Degree</span>
+            <span>B.Tech</span>
+          </div>
+
+          <div class="profile-detail">
+            <span>College</span>
+            <span>St. Joseph’s College of Engineering and Technology</span>
+          </div>
+
+          <div class="profile-detail">
+            <span>Location</span>
+            <span>Thiruvalla, Kerala</span>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+
+        <p class="section-label">About Me</p>
+
+        <h2 class="section-title">
+          A little <span class="accent">about me</span>
+        </h2>
+
+        <div class="about-grid">
+
+          <div class="about-text">
+            <p>
+              I am an Electronics and Computer Engineering graduate
+              from St. Joseph’s College of Engineering and Technology,
+              Palai. My background includes Python programming,
+              Structured Query Language (SQL), C programming, and
+              Hardware Description Language (Verilog).
+            </p>
+
+            <p>
+              My academic projects include an AI-powered platform for
+              early autism detection and family guidance, and a smart
+              temperature-driven fan control system. These projects
+              allowed me to work on technology-driven problem solving
+              in different areas of engineering.
+            </p>
+
+            <p>
+              I am an aspiring Data Engineer interested in developing
+              my career in the data field. I bring analytical thinking,
+              adaptability, attention to detail, problem-solving
+              ability, quick learning, and team collaboration.
+            </p>
+          </div>
+
+          <aside class="info-card">
+            <h3>Personal Details</h3>
+
+            <ul class="info-list">
+              <li>Alviya Anna Sabu</li>
+              <li>Thiruvalla, Kerala</li>
+              <li>Electronics and Computer Engineering</li>
+              <li>Python Programming</li>
+              <li>Structured Query Language (SQL)</li>
+              <li>Artificial Intelligence</li>
+            </ul>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+
+        <p class="section-label">What I Know</p>
+
+        <h2 class="section-title">
+          Technical <span class="accent">Skills</span>
+        </h2>
+
+        <p class="section-description">
+          Technical skills and tools listed in my resume.
+        </p>
+
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <h3>Programming Languages</h3>
+            <div class="tags">
+              <span class="tag">Python Programming</span>
+              <span class="tag">C Programming</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Database Language</h3>
+            <div class="tags">
+              <span class="tag">Structured Query Language (SQL)</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Hardware Description</h3>
+            <div class="tags">
+              <span class="tag">Verilog</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Microsoft Office</h3>
+            <div class="tags">
+              <span class="tag">Microsoft Excel</span>
+              <span class="tag">Microsoft Word</span>
+              <span class="tag">Microsoft PowerPoint</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Artificial Intelligence Project</h3>
+            <div class="tags">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">CNN</span>
+              <span class="tag">LSTM</span>
+              <span class="tag">Ensemble Models</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+
+        <p class="section-label">My Work</p>
+
+        <h2 class="section-title">
+          Academic <span class="accent">Projects</span>
+        </h2>
+
+        <p class="section-description">
+          Projects completed as part of my technical and academic
+          experience.
+        </p>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 01</div>
+
+            <h3>
+              Multi-Feature Platform for Early Autism Detection
+              and Family Guidance
+            </h3>
+
+            <p>
+              Developed an AI-powered platform for early autism
+              screening in children by combining behavioral video
+              analysis with standardized assessment questionnaires.
+            </p>
+
+            <p>
+              Leveraged Machine Learning and Deep Learning techniques,
+              including CNN, LSTM, and ensemble models, to support
+              autism risk prediction while enabling automated
+              reporting, progress tracking, and improved collaboration
+              among parents, healthcare professionals, and therapists.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Artificial Intelligence</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">CNN</span>
+              <span class="tag">LSTM</span>
+              <span class="tag">Ensemble Models</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 02</div>
+
+            <h3>Smart Temperature-Driven Fan Control System</h3>
+
+            <p>
+              Developed an ESP32-based smart fan control system using
+              Arduino IDE that automatically adjusts fan speed based
+              on real-time temperature sensor data.
+            </p>
+
+            <p>
+              Implemented sensor-based automation to improve energy
+              efficiency and maintain optimal thermal comfort under
+              varying environmental conditions.
+            </p>
+
+            <div class="tags">
+              <span class="tag">ESP32</span>
+              <span class="tag">Arduino IDE</span>
+              <span class="tag">Temperature Sensor</span>
+              <span class="tag">Sensor-Based Automation</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <div class="container">
+
+        <p class="section-label">My Qualifications</p>
+
+        <h2 class="section-title">
+          <span class="accent">Education</span>
+        </h2>
+
+        <div class="education-list">
+
+          <article class="education-card">
+            <div class="education-date">Oct 2022 – Jun 2026</div>
+
+            <div>
+              <h3>Bachelor of Technology (B.Tech)</h3>
+
+              <p class="institution">
+                St. Joseph’s College of Engineering and Technology, Palai
+              </p>
+
+              <p>Discipline: Electronics and Computer Engineering</p>
+              <p>CGPA: 6.66</p>
+            </div>
+          </article>
+
+          <article class="education-card">
+            <div class="education-date">Jun 2020 – Mar 2022</div>
+
+            <div>
+              <h3>XII Standard</h3>
+
+              <p class="institution">
+                Balikamadam Higher Secondary School, Thiruvalla
+              </p>
+
+              <p>
+                PCBM (Physics, Chemistry, Biology, Mathematics)
+              </p>
+
+              <p>Percentage: 83%</p>
+            </div>
+          </article>
+
+          <article class="education-card">
+            <div class="education-date">Mar 2020</div>
+
+            <div>
+              <h3>X Standard</h3>
+
+              <p class="institution">
+                Balikamadam Higher Secondary School, Thiruvalla
+              </p>
+
+              <p>Secondary Education</p>
+              <p>Percentage: 97%</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Soft Skills and Languages -->
+    <section class="section" id="strengths">
+      <div class="container">
+
+        <p class="section-label">Personal Strengths</p>
+
+        <h2 class="section-title">
+          Soft Skills &amp; <span class="accent">Languages</span>
+        </h2>
+
+        <div class="two-column">
+
+          <article class="detail-card">
+            <h3>Soft Skills</h3>
+
+            <ul class="simple-list">
+              <li>Adaptability</li>
+              <li>Analytical Thinking</li>
+              <li>Attention to Detail</li>
+              <li>Problem Solving</li>
+              <li>Quick Learning Ability</li>
+              <li>Team Collaboration</li>
+            </ul>
+          </article>
+
+          <article class="detail-card">
+            <h3>Languages</h3>
+
+            <ul class="simple-list">
+              <li>English — Proficient</li>
+              <li>Malayalam — Native</li>
+              <li>Hindi — Basic</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+
+        <div class="contact-panel">
+          <p class="section-label">Contact</p>
+
+          <h2 class="section-title">
+            Get in <span class="accent">Touch</span>
+          </h2>
+
+          <p>
+            Alviya Anna Sabu<br>
+            Thiruvalla, Kerala
+          </p>
+
+          <div class="contact-links">
+
+            <a
+              class="contact-link"
+              href="mailto:alviyathottathil@gmail.com"
+            >
+              alviyathottathil@gmail.com
+            </a>
+
+            <a
+              class="contact-link"
+              href="tel:+916238665016"
+            >
+              6238665016
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/alviya-anna-sabu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn Profile ↗
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>
+        © <span id="year"></span> Alviya Anna Sabu
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.textContent = isOpen ? "Close ✕" : "Menu ☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "Menu ☰";
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
