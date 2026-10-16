@@ -1,29 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alviya's personal portfolio showcasing skills, education, projects, achievements, and certifications.">
-  <title>Alviya | Personal Portfolio</title>
+  <meta name="description" content="Portfolio of Alviya Anna Sabu, Electronics and Computer Engineering graduate interested in AI, Python, SQL, and technology.">
+  <title>Alviya Anna Sabu | Personal Portfolio</title>
 
   <style>
+    :root {
+      --bg: #f6f8fc;
+      --white: #ffffff;
+      --dark: #172554;
+      --accent: #6558d3;
+      --light: #eeecff;
+      --text: #354158;
+      --muted: #718096;
+      --border: #e2e8f0;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
-    }
-
-    :root {
-      --bg: #f7f8fc;
-      --white: #ffffff;
-      --dark: #18243a;
-      --accent: #6558d3;
-      --accent-light: #eeecff;
-      --text: #354158;
-      --muted: #718096;
-      --border: #e5e8f0;
     }
 
     body {
@@ -34,967 +33,458 @@
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
-    .container {
-      width: 88%;
-      max-width: 1100px;
+    .wrap {
+      width: min(1100px, 90%);
       margin: auto;
     }
 
-    /* Navigation */
-
     header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
-      min-height: 75px;
+      min-height: 72px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 800;
       color: var(--dark);
     }
 
-    .logo span {
+    .brand span {
       color: var(--accent);
     }
 
-    .nav-links {
+    .navlinks {
       display: flex;
-      gap: 23px;
       align-items: center;
+      gap: 24px;
     }
 
-    .nav-links a {
-      color: var(--text);
-      font-size: 14px;
+    .navlinks a {
+      font-size: 0.92rem;
       font-weight: 600;
     }
 
-    .nav-links a:hover {
+    .navlinks a:hover,
+    .text-link:hover {
       color: var(--accent);
     }
 
-    .menu-btn {
+    .menu {
       display: none;
-      border: 1px solid var(--border);
       padding: 8px 12px;
-      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 8px;
+      background: white;
       cursor: pointer;
-      font-size: 17px;
     }
-
-    /* Hero section */
 
     .hero {
-      padding: 90px 0;
-      background:
-        radial-gradient(circle at 85% 15%, #e5e0ff 0, transparent 30%),
-        var(--bg);
-    }
-
-    .hero-content {
+      min-height: 590px;
       display: grid;
-      grid-template-columns: 1.5fr 0.8fr;
+      grid-template-columns: 1.4fr 0.8fr;
       align-items: center;
       gap: 55px;
+      padding-top: 65px;
+      padding-bottom: 65px;
     }
 
-    .tag {
-      display: inline-block;
-      padding: 7px 15px;
-      border-radius: 30px;
-      background: var(--accent-light);
+    .eyebrow,
+    .kicker {
       color: var(--accent);
-      font-size: 13px;
-      font-weight: bold;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .hero h1 {
+    h1 {
+      margin: 20px 0;
       color: var(--dark);
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1.2;
-      margin: 22px 0;
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
     }
 
-    .hero h1 span {
+    h1 em {
       color: var(--accent);
+      font-style: normal;
     }
 
-    .hero p {
+    .lead {
+      max-width: 620px;
+      font-size: 1.08rem;
       color: var(--muted);
-      font-size: 17px;
-      max-width: 570px;
     }
 
-    .buttons {
+    .actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 12px;
       margin-top: 28px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 21px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 14px;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: white;
+      font-weight: 700;
       transition: 0.2s;
     }
 
     .btn:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
-    .btn-primary {
+    .btn.primary {
       color: white;
       background: var(--accent);
-    }
-
-    .btn-outline {
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      background: transparent;
-    }
-
-    .profile {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 28px;
-      text-align: center;
-      box-shadow: 0 15px 45px #202a4410;
-    }
-
-    .avatar {
-      width: 145px;
-      height: 145px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #6558d3, #a89fff);
-      color: white;
-      font-size: 48px;
-      font-weight: bold;
-    }
-
-    .profile h2 {
-      color: var(--dark);
-      font-size: 23px;
-    }
-
-    .profile p {
-      font-size: 14px;
-      margin-top: 7px;
-    }
-
-    .profile-note {
-      margin-top: 18px;
-      padding: 10px;
-      border-radius: 10px;
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    /* Common sections */
-
-    section {
-      padding: 75px 0;
-      scroll-margin-top: 75px;
-    }
-
-    .section-heading {
-      margin-bottom: 35px;
-    }
-
-    .section-heading .number {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .section-heading h2 {
-      color: var(--dark);
-      font-size: clamp(28px, 4vw, 38px);
-      margin: 7px 0;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      max-width: 650px;
-    }
-
-    /* About */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .card {
-      padding: 25px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 15px;
-    }
-
-    .card h3 {
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    /* Education */
-
-    .education-list {
-      display: grid;
-      gap: 17px;
-    }
-
-    .education-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
-      border-radius: 12px;
-      padding: 22px;
-    }
-
-    .education-item h3 {
-      color: var(--dark);
-    }
-
-    .education-item p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* Skills */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .skill {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      padding: 22px 17px;
-      transition: 0.2s;
-    }
-
-    .skill:hover {
-      transform: translateY(-4px);
       border-color: var(--accent);
     }
 
-    .skill .symbol {
-      color: var(--accent);
-      font-size: 27px;
-      font-weight: bold;
-    }
-
-    .skill h3 {
-      color: var(--dark);
-      margin: 8px 0;
-      font-size: 17px;
-    }
-
-    .skill p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Projects */
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .project {
-      display: flex;
-      flex-direction: column;
-      background: var(--white);
+    .profile-card {
+      padding: 35px 28px;
       border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 24px;
-      transition: 0.2s;
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: 0 20px 60px rgba(23, 37, 84, 0.08);
     }
 
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px #202a4410;
-    }
-
-    .project-label {
+    .avatar {
+      width: 100px;
+      height: 100px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 24px;
+      background: var(--light);
       color: var(--accent);
-      font-size: 12px;
-      font-weight: bold;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .card-label {
+      color: var(--muted);
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-    .project h3 {
+    .profile-card h2 {
+      margin: 8px 0;
       color: var(--dark);
-      margin: 15px 0 10px;
+      font-size: 1.7rem;
     }
 
-    .project p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .project-link {
-      display: inline-block;
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 14px;
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-top: 18px;
     }
 
-    /* Certifications */
-
-    .cert-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .cert {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      padding: 22px;
-    }
-
-    .cert-icon {
-      display: grid;
-      place-items: center;
-      min-width: 43px;
-      height: 43px;
-      border-radius: 10px;
-      background: var(--accent-light);
+    .chip {
+      display: inline-block;
+      padding: 5px 11px;
+      border-radius: 20px;
+      background: var(--light);
       color: var(--accent);
-      font-weight: bold;
-      font-size: 21px;
+      font-size: 0.8rem;
+      font-weight: 700;
     }
 
-    .cert h3 {
+    section {
+      padding: 85px 0;
+    }
+
+    section:nth-of-type(even) {
+      background: white;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 35px;
+    }
+
+    .section-head h2,
+    .contact h2 {
+      margin-top: 10px;
       color: var(--dark);
-      font-size: 16px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.25;
     }
 
+    .section-head > p {
+      max-width: 430px;
+      color: var(--muted);
+    }
+
+    .about-grid,
+    .skill-grid,
+    .projects,
+    .education-grid,
+    .language-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .skill-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .language-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .panel,
+    .skill,
+    .project,
+    .education,
+    .language,
+    .cert {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+    }
+
+    .panel h3,
+    .skill h3,
+    .project h3,
+    .education h3,
+    .language h3,
+    .cert h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .panel p,
+    .skill p,
+    .project p,
+    .education p,
+    .language p,
     .cert p {
       color: var(--muted);
-      font-size: 13px;
     }
 
-    /* Achievements */
-
-    .achievement-list {
-      display: grid;
-      gap: 14px;
+    .symbol {
+      margin-bottom: 15px;
+      color: var(--accent);
+      font-size: 1.7rem;
     }
 
-    .achievement {
-      background: var(--white);
+    .skill:hover,
+    .project:hover,
+    .education:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      transition: 0.2s;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .date {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .education {
+      margin-bottom: 5px;
+    }
+
+    .education p {
+      margin-top: 5px;
+    }
+
+    .soft-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .soft-skills span {
+      padding: 10px 16px;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 19px 22px;
+      border-radius: 10px;
+      background: white;
+      font-weight: 600;
     }
 
-    .achievement h3 {
-      color: var(--dark);
-      font-size: 17px;
-    }
-
-    .achievement p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* Contact */
-
-    .contact-box {
+    .contact {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
       align-items: center;
-      gap: 25px;
+      padding: 40px;
+      border-radius: 24px;
       background: var(--dark);
       color: white;
-      border-radius: 20px;
-      padding: 40px;
     }
 
-    .contact-box h2 {
-      font-size: clamp(27px, 4vw, 37px);
-      margin: 10px 0;
+    .contact h2 {
+      color: white;
     }
 
-    .contact-box p {
-      color: #c2cada;
-      max-width: 550px;
+    .contact p {
+      margin-top: 15px;
+      color: #cbd5e1;
     }
 
-    .contact-links {
+    .contact-actions {
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      align-items: flex-start;
+      gap: 12px;
     }
 
-    .contact-links .btn {
-      text-align: center;
-      white-space: nowrap;
+    .contact-actions .btn {
+      min-width: 220px;
     }
-
-    .contact-links .btn-outline {
-      color: white;
-      border-color: #68748c;
-    }
-
-    /* Footer */
 
     footer {
       padding: 25px 0;
+      background: white;
       border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
     }
 
-    .footer-content {
+    .foot {
       display: flex;
       justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    footer a {
+    .foot a {
       color: var(--accent);
-      font-weight: bold;
+      font-weight: 700;
     }
 
-    /* Mobile responsive design */
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
 
-    @media (max-width: 850px) {
-      .hero-content {
+      .about-grid,
+      .contact {
         grid-template-columns: 1fr;
       }
 
-      .profile {
-        max-width: 420px;
-      }
-
-      .skills-grid {
+      .skill-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .section-head {
+        display: block;
       }
 
-      .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-links {
-        flex-direction: row;
-        flex-wrap: wrap;
+      .section-head > p {
+        margin-top: 15px;
       }
     }
 
     @media (max-width: 600px) {
-      .container {
-        width: 90%;
-      }
-
-      .menu-btn {
+      .menu {
         display: block;
       }
 
-      .nav-links {
+      .navlinks {
         display: none;
         position: absolute;
-        top: 74px;
+        top: 72px;
         left: 0;
         right: 0;
-        background: var(--white);
-        border-bottom: 1px solid var(--border);
         padding: 20px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .nav-links.open {
+      .navlinks.open {
         display: flex;
       }
 
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero h1 {
-        font-size: 39px;
-      }
-
-      .about-grid,
-      .projects-grid,
-      .cert-list {
+      .skill-grid,
+      .projects,
+      .education-grid,
+      .language-grid {
         grid-template-columns: 1fr;
       }
 
       section {
-        padding: 55px 0;
+        padding: 60px 0;
       }
 
-      .contact-box {
-        padding: 25px;
+      .contact {
+        padding: 28px 22px;
       }
 
-      .contact-links {
+      .foot {
         flex-direction: column;
       }
 
-      .footer-content {
-        flex-direction: column;
+      h1 {
+        letter-spacing: -1px;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Navigation -->
   <header>
-    <nav class="container">
-      <a class="logo" href="#home">ALVIYA<span>.</span></a>
-
-      <button class="menu-btn" id="menuBtn"
-        aria-expanded="false" aria-controls="navLinks">
-        ☰ Menu
-      </button>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- Home -->
-    <section class="hero" id="home">
-      <div class="container hero-content">
-
-        <div>
-          <span class="tag">Welcome to my portfolio</span>
-
-          <h1>
-            Hello, I'm <span>Alviya!</span><br>
-            Welcome to my world.
-          </h1>
-
-          <p>
-            I am a motivated student who enjoys learning new things,
-            exploring ideas, developing skills, and working on projects
-            that turn knowledge into practical experience.
-          </p>
-
-          <div class="buttons">
-            <a href="#projects" class="btn btn-primary">
-              Explore My Work ↗
-            </a>
-
-            <a href="#contact" class="btn btn-outline">
-              Contact Me
-            </a>
-          </div>
-        </div>
-
-        <div class="profile">
-          <div class="avatar">A</div>
-          <h2>Alviya</h2>
-          <p>Student | Lifelong Learner</p>
-          <div class="profile-note">
-            Learning · Creating · Growing
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="number">01 / About Me</div>
-          <h2>A little about me</h2>
-          <p>
-            Get to know my interests, values, strengths, and goals.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="card">
-            <h3>Who I Am</h3>
-            <p>
-              I am a student who believes in continuous learning
-              and personal development. I enjoy exploring different
-              subjects, learning useful tools, and applying what I
-              learn through assignments and projects.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>My Goals</h3>
-            <p>
-              My goal is to develop strong professional skills,
-              gain practical experience, collaborate with others,
-              and continue growing academically and personally.
-              I welcome opportunities to learn and contribute.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="number">02 / Education</div>
-          <h2>My educational journey</h2>
-          <p>
-            My academic background and the subjects I am exploring.
-          </p>
-        </div>
-
-        <div class="education-list">
-
-          <div class="education-item">
-            <h3>Your Current Degree or Course</h3>
-            <p>Your College or Institution</p>
-            <p>Year: Add your study period</p>
-            <p>Specialization: Add your subject or stream</p>
-          </div>
-
-          <div class="education-item">
-            <h3>Your Previous Qualification</h3>
-            <p>Your School or Institution</p>
-            <p>Year: Add your completion year</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="number">03 / Skills</div>
-          <h2>Skills and strengths</h2>
-          <p>
-            A combination of technical knowledge, personal strengths,
-            and skills I continue to develop.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-
-          <div class="skill">
-            <div class="symbol">✦</div>
-            <h3>Communication</h3>
-            <p>Sharing ideas clearly and listening to others.</p>
-          </div>
-
-          <div class="skill">
-            <div class="symbol">◎</div>
-            <h3>Problem-solving</h3>
-            <p>Thinking through challenges and finding solutions.</p>
-          </div>
-
-          <div class="skill">
-            <div class="symbol">⌘</div>
-            <h3>Technical Skills</h3>
-            <p>Add programming languages, software, and tools.</p>
-          </div>
-
-          <div class="skill">
-            <div class="symbol">◇</div>
-            <h3>Teamwork</h3>
-            <p>Collaborating and learning from others.</p>
-          </div>
-
-          <div class="skill">
-            <div class="symbol">▤</div>
-            <h3>Organization</h3>
-            <p>Planning tasks and managing time effectively.</p>
-          </div>
-
-          <div class="skill">
-            <div class="symbol">✎</div>
-            <h3>Creativity</h3>
-            <p>Exploring ideas and developing new approaches.</p>
-          </div>
-
-          <div class="skill">
-            <div class="symbol">↗</div>
-            <h3>Adaptability</h3>
-            <p>Learning new concepts and adjusting to change.</p>
-          </div>
-
-          <div class="skill">
-            <div class="symbol">★</div>
-            <h3>Continuous Learning</h3>
-            <p>Building knowledge through practice and feedback.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="number">04 / Projects</div>
-          <h2>Things I've worked on</h2>
-          <p>
-            Academic assignments, personal projects, and practical
-            work that demonstrate my learning and abilities.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-
-          <article class="project">
-            <div class="project-label">Project 01</div>
-            <h3>Personal Portfolio Website</h3>
-            <p>
-              A personal website designed to present my background,
-              skills, projects, achievements, and contact information.
-            </p>
-            <a class="project-link" href="#contact">
-              Add project link ↗
-            </a>
-          </article>
-
-          <article class="project">
-            <div class="project-label">Project 02</div>
-            <h3>Academic Project</h3>
-            <p>
-              Describe an academic assignment or group project,
-              the tools or methods used, and the outcome.
-            </p>
-            <a class="project-link" href="#contact">
-              Add project link ↗
-            </a>
-          </article>
-
-          <article class="project">
-            <div class="project-label">Project 03</div>
-            <h3>Personal Learning Project</h3>
-            <p>
-              Showcase a practical project that reflects your
-              interests, initiative, and newly developed skills.
-            </p>
-            <a class="project-link" href="#contact">
-              Add project link ↗
-            </a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="number">05 / Certifications</div>
-          <h2>Courses and certifications</h2>
-          <p>
-            Add certificates you have genuinely earned, along
-            with the issuing organization and completion year.
-          </p>
-        </div>
-
-        <div class="cert-list">
-
-          <div class="cert">
-            <div class="cert-icon">✓</div>
-            <div>
-              <h3>Certification Name</h3>
-              <p>Issuing Organization · Year</p>
-              <p>Add your credential link if available.</p>
-            </div>
-          </div>
-
-          <div class="cert">
-            <div class="cert-icon">✓</div>
-            <div>
-              <h3>Course Completion</h3>
-              <p>Course Provider · Year</p>
-              <p>Add your certificate link if available.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Achievements -->
-    <section id="achievements">
-      <div class="container">
-
-        <div class="section-heading">
-          <div class="number">06 / Achievements</div>
-          <h2>Achievements and activities</h2>
-          <p>
-            Highlight accomplishments and experiences that
-            reflect your interests and personal growth.
-          </p>
-        </div>
-
-        <div class="achievement-list">
-
-          <div class="achievement">
-            <h3>Academic Achievements</h3>
-            <p>
-              Add academic awards, accomplishments, or milestones.
-            </p>
-          </div>
-
-          <div class="achievement">
-            <h3>Workshops and Activities</h3>
-            <p>
-              Add workshops, seminars, volunteering, or events
-              in which you participated.
-            </p>
-          </div>
-
-          <div class="achievement">
-            <h3>Personal Accomplishments</h3>
-            <p>
-              Describe other meaningful achievements or activities.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-
-        <div class="contact-box">
-          <div>
-            <div class="number">07 / Contact</div>
-            <h2>Let's connect!</h2>
-            <p>
-              Thank you for visiting my portfolio. Feel free to
-              connect with me about projects, collaboration,
-              learning opportunities, or professional networking.
-            </p>
-          </div>
-
-          <div class="contact-links">
-            <a class="btn btn-primary"
-               href="mailto:your.email@example.com">
-              Email Me ↗
-            </a>
-
-            <a class="btn btn-outline"
-               href="https://github.com/yourusername"
-               target="_blank" rel="noopener noreferrer">
-              GitHub Profile ↗
-            </a>
-
-            <a class="btn btn-outline"
-               href="https://www.linkedin.com/in/yourusername"
-               target="_blank" rel="noopener noreferrer">
-              LinkedIn Profile ↗
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <p>
-        &copy; <span id="year"></span> Alviya. All rights reserved.
-      </p>
-      <a href="#home">Back to Top ↑</a>
-    </div>
-  </footer>
-
-  <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-
-    menuBtn.addEventListener("click", function () {
-      const isOpen = navLinks.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    navLinks.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-        menuBtn.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
-
-</body>
-</html>
-
+    <nav class="wrap">
+      <a class="brand" href="#home">ALVIYA<span>.</span></a>
+
+      <button class="menu" id="menuBtn" aria-expanded="false"
+        aria
